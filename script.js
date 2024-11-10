@@ -34,7 +34,7 @@ function updateFavorites() {
 
     if (favorites.length === 0) {
         const message = document.createElement("li");
-        message.innerText = "No favorite translations.";
+        message.innerText = "Нет избранных переводов.";
         favoritesList.appendChild(message);
     } else {
         favorites.forEach((item, index) => {
@@ -54,7 +54,7 @@ function updateFavorites() {
 function removeFavorite(index) {
     favorites.splice(index, 1);
     updateFavorites();
-    alert("Translation removed from favorites.");
+    alert("Перевод удалён из избранных.");
 }
 
 
