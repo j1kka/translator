@@ -1,3 +1,5 @@
+import { fakeTranslate } from './fakeTranslate.js';
+
 let favorites = [];
 
 
@@ -9,11 +11,10 @@ async function translateWord() {
     }
     try {
         const translation = await fakeTranslate(word); 
-        document.getElementById("translationResult").innerText = translation; 
-        document.getElementById("saveButton").disabled = false; 
+        document.getElementById("translationResult").innerText = translation;
+        document.getElementById("saveButton").disabled = false;
     } catch (error) {
-        document.getElementById("translationResult").innerText = error; 
-        document.getElementById("saveButton").disabled = true; 
+        document.getElementById("translationResult").innerText = error;
     }
 }
 
@@ -23,7 +24,7 @@ function saveTranslation() {
     const translation = document.getElementById("translationResult").innerText;
 
     favorites.push({ word, translation });
-    updateFavorites(); 
+    updateFavorites();
     document.getElementById("saveButton").disabled = true;
 
     alert(`Сохранено: ${word} - ${translation}`);
@@ -32,7 +33,7 @@ function saveTranslation() {
 
 function updateFavorites() {
     const favoritesList = document.getElementById("favoritesList");
-    favoritesList.innerHTML = "";
+    favoritesList.innerHTML = ""; 
 
     if (favorites.length === 0) {
         const message = document.createElement("li");
@@ -55,12 +56,11 @@ function updateFavorites() {
 
 
 function removeFavorite(index) {
-    favorites.splice(index, 1); 
-    updateFavorites(); 
+    favorites.splice(index, 1);
+    updateFavorites();
     alert("Перевод удален из избранного.");
 }
 
 
 document.getElementById("translateButton").addEventListener("click", translateWord);
 document.getElementById("saveButton").addEventListener("click", saveTranslation);
-
