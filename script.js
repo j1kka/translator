@@ -5,7 +5,7 @@ let favorites = [];
 async function translateWord() {
     const word = document.getElementById("wordInput").value.trim();
     if (!word) {
-        alert("Enter the word to translate.");
+        alert("Введите слово для перевода.");
         return;
     }
     try {
