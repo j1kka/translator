@@ -23,9 +23,8 @@ const dictionary = {
 };
 
 
-function fakeTranslate(word) {
+export function fakeTranslate(word) {
     return new Promise((resolve, reject) => {
-        
         setTimeout(() => {
             const translation = dictionary[word.toLowerCase()];
             if (translation) {
@@ -33,9 +32,6 @@ function fakeTranslate(word) {
             } else {
                 reject("Перевод не найден");
             }
-        }, 1000); 
+        }, 1000);
     });
 }
-
-
-export { fakeTranslate };
