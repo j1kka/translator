@@ -41,7 +41,7 @@ function updateFavorites() {
     } else {
         favorites.forEach((item, index) => {
             const listItem = document.createElement("li");
-            listItem.innerText = ${item.word} - ${item.translation};
+            listItem.innerText = `${item.word} - ${item.translation}`;
             
             const removeButton = document.createElement("button");
             removeButton.innerText = "Удалить";
