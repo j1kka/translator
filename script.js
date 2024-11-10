@@ -1,5 +1,3 @@
-export function fakeTranslate(word) {
-
 let favorites = [];
 
 
@@ -65,4 +63,4 @@ function removeFavorite(index) {
 
 document.getElementById("translateButton").addEventListener("click", translateWord);
 document.getElementById("saveButton").addEventListener("click", saveTranslation);
-}
+
