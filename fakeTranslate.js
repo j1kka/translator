@@ -28,7 +28,7 @@ function fakeTranslate(word) {
             if (translation) {
                 resolve(translation);
             } else {
-                reject("Translation not found.");
+                reject("Перевод не найден.");
             }
         }, 1000); 
     });
