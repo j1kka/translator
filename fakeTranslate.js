@@ -1,3 +1,4 @@
+// Объект dictionary для хранения переводов
 const dictionary = {
     "hello": "здравствуйте",
     "world": "мир",
@@ -24,15 +25,17 @@ const dictionary = {
 
 function fakeTranslate(word) {
     return new Promise((resolve, reject) => {
-      
+        
         setTimeout(() => {
-            
             const translation = dictionary[word.toLowerCase()];
             if (translation) {
-                resolve(translation); 
+                resolve(translation);
             } else {
-                reject("Перевод не найден"); 
+                reject("Перевод не найден");
             }
-        }, 1000);
+        }, 1000); 
     });
 }
+
+
+export { fakeTranslate };
